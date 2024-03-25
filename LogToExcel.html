@@ -1,0 +1,445 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Apache2 Debian Default Page: It works</title>
+    <style type="text/css" media="screen">
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #D8DBE2;
+
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 99px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-style: italic;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_red {
+    background-color: #CD214F;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+    <div class="main_page">
+      <div class="page_header floating_element">
+        <img src="/icons/openlogo-75.png" alt="Debian Logo" class="floating_element"/>
+        <span class="floating_element">
+          <a href="/index.html">Apache2 Debian Default Page</a>
+        </span>
+      </div>
+<!--      <div class="table_of_contents floating_element">
+        <div class="section_header section_header_grey">
+          TABLE OF CONTENTS
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#about">About</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#changes">Changes</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#scope">Scope</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#files">Config files</a>
+        </div>
+      </div>
+-->
+      <div class="content_section floating_element">
+
+
+        <div class="section_header section_header_red">
+          <div id="about"></div>
+          LogToExcel
+        </div>
+        <div class="content_section_text">
+          <p>
+                LogToExcel est un programme permettant de convertir des fichiers catalina.out en graphique Excel.
+                Durant ce développement, un système de <a href="/Kanban-NOVAE.png">Kanban</a> a été utilisé afin de
+                planifier les tâches, et les avancées ont été régulièrement présentées devant mon tuteur au cours de
+                mon stage pour aider à faire évoluer le programme.
+          </p>
+
+
+          <p>
+                Il y a eu en tout quatre demandes de version du programme, une par semaine de stage, la dernière n'ayant
+                pas pu être développée.
+          </p>
+
+        </div>
+        <div class="section_header">
+          <div id="changes"></div>
+                Première version
+        </div>
+        <div class="content_section_text">
+          <p>
+                Dans sa première version LogToExcel ne prenait en compte qu'une seule journée de log pour en faire une courbe.
+                De plus durant cette semaine de stage j'ai pu en apprendre plus sur Tomcat qui est un serveur HTTP avec un conteneur
+                de servelets (une classe java pour créer des données dynamiques).
+          </p>
+            <p>
+                <img src="/main1.png" alt="Extrait de Main.java" style="width: 100% height: auto">
+          </p>
+            <p>Le programme est composé de 3 fichiers Java (Main, LogEntry et Excel) ainsi que d'un README.</p>
+          <ul>
+                        <li>
+                           <tt>Main.java</tt> : Fichier principal qui permet de lancer le programme. Il crée tout d'abord
+                            une fenêtre pour choisir le fichier catalina.out à analyser, puis crée une liste de tableaux de
+                            type LogEntry et les remplit avec les informations nécessaires (les différents niveaux des
+                            messages, INFO, WARNING et ERROR). Ensuite, il trie la liste de tableaux en fonction du niveau
+                            de sévérité du message. Enfin, il extrait de la liste le message de chaque ligne afin de l'envoyer
+                            dans Excel.java, qui permet de créer le fichier Excel.
+                        </li>
+
+                        <li>
+                           <tt>LogEntry.java</tt> : Fichier de classe Java qui permet de stocker dans une liste le message, le
+                            type d'anomalie (Info, Warning et Error), l'hôte d'où provient le message ainsi que la date du message.
+                        </li>
+
+                        <li>
+                           <tt>Excel.java/</tt> : Fichier qui permet la création du fichier Excel grâce à la librairie ApachePOI.
+                            Il crée les différentes colonnes avec leur titre puis récupère les informations dans LogEntry pour les
+                            inclure dans le fichier. Ensuite, il compte le nombre d'occurrences de chaque type de criticité.
+                            Enfin, il fait apparaître une fenêtre pour permettre l'enregistrement du fichier Excel.
+                        </li>
+
+                        <li>
+                           <tt>README-V1.nfo</tt> : Résume brièvement ce que fait le programme
+                        </li>
+          </ul>
+        </div>
+
+        <div class="section_header">
+            <div id="docroot"></div>
+                Les fichiers
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                Les fichiers sont disponibles sous la forme d'un fichier <a href="/logToExcel-V1.zip">.ZIP</a> contenant
+                 un également exemple de fichiers Excel généré par le pogramme.
+            </p>
+        </div>
+            <HR>
+            </HR>
+        <div class="section_header">
+          <div id="bugs"></div>
+                Deuxième version
+        </div>
+        <div class="content_section_text">
+          <p>
+                La deuxième version est séparée en deux version les deux permettant d'envoyer le fichier Excel par mail
+                mais la 2.2 permet l'envoi à plusieurs destinataires
+          </p>
+            <img src="/mail1.png" alt="Extrait du fichier SendMail.java" style="width: 100% height: auto"/>
+          <p>
+                Le programme se compose désormais de 4 fichiers avec l'ajout de SendMail.java
+          </p>
+            <HR>
+            </HR>
+            <p>LogToExcel V2.1</p>
+            <ul>
+                <li>
+                    <tt>Excel.java</tt> : Permet désormais de demandé via une fenêtre les identifaint  de l'adresse mail de l'utilisateur
+                    pour les envoyer à <tt>SendMail.java</tt>
+                </li>
+
+                <li>
+                    <tt>SendMail.java</tt> : Classe java qui permet grâce à javax.mail d'enbvoyer le fichier Excel en pièce jointe à
+                    un destinataire avec comme corps du message le résumé du graphique.
+                </li>
+            </ul>
+
+            <div class="section_header">
+            <div id="docroot"></div>
+                Les fichiers
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                Les fichiers sont disponibles sous la forme d'un fichier <a href="/logToExcel-V2-1.zip">.ZIP</a> contenant
+                 un également exemple de fichiers Excel généré par le pogramme.
+            </p>
+        </div>
+        <HR>
+        </HR>
+            <p>LogToExcel V2.2</p>
+            <ul>
+                <li>
+                    <tt>Excel.java</tt> : Permet désormais de demandé via une fenêtre les différents destinataires à qui envoyer le mail
+                    via <tt>SendMail.java</tt>
+                </li>
+            </ul>
+            <div class="section_header">
+            <div id="docroot"></div>
+                Les fichiers
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                Les fichiers sont disponibles sous la forme d'un fichier <a href="/logToExcel-V2-2.zip">.ZIP</a> contenant
+                 un également exemple de fichiers Excel généré par le pogramme.
+            </p>
+        </div>
+        </div>
+        <div class="section_header">
+          <div id="changes"></div>
+                Troisème version
+        </div>
+        <div class="content_section_text">
+          <p>
+                Dans sa troisième version LogToExcel permet désormais d'analyser plusieur jour contenu dans un seul log <tt>catalina.out</tt>
+                et de crée un graphique par jour en plus d'un graphique genéral pour l'ensemble du log
+          </p>
+            <p>
+                <img src="/excel3.png" alt="Extrait de Excel.java" style="width: 100% height: auto">
+          </p>
+            <p>Le programme est toujours composé de 4 fichiers java ainsi que d'un README.</p>
+          <ul>
+                        <li>
+                           <tt>Main.java</tt> : Le fichier oermet désormais de trier un liste de liste avec comme critère les jour. Et
+                            c'est désormais lui qui demande les identifaints et le nombre de destinataires si le fichier doit être
+                            envoyé par mail.
+                        </li>
+
+                        <li>
+                           <tt>Excel.java</tt> : Le fichier crée désormais une première page contenant un graophique avec les occurances de
+                            toutes les criticités du log sur l'ensemble des jours, ainsi qu'une page avec un graphique camembert par jour.
+                        </li>
+
+          </ul>
+        <div class="section_header">
+            <div id="docroot"></div>
+                Les fichiers
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                Les fichiers sont disponibles sous la forme d'un fichier <a href="/logToExcel-V3.zip">.ZIP</a> contenant
+                  également exemple de fichiers Excel généré par le pogramme.
+            </p>
+        </div>
+ <div class="section_header">
+          <div id="changes"></div>
+                Quatrième version
+        </div>
+        <div class="content_section_text">
+          <p>
+                Dans sa quatrième version LogToExcel était censé permettre de transformé le fichier Excel en fichier HTML mais
+                cela n'a pas pu être réalisé par manque de moyens.
+          </p>
+            <HR>
+            </HR>
+              <div class="section_header">
+            <div id="docroot"></div>
+                Infographie
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                Vous retrouverez ici quelques images provenant soit du programe sit du fichiers Excel généré.
+            </p>
+            <p>
+                <img src="/Demande-envoi-par-mail.png" alt="Demande d'envoie par mail" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Demande-password.png" alt="Demande de mot de passe" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Destinataire.png" alt="Destinataire du mail" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Sélection-du-fichier-log.png" alt="Sélection du fichier de log" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Demande-informations.png" alt="Demande d'informations" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Multi-destinataire.png" alt="Multi destinataires" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Camembert-jour.png" alt="Camembert d'un jour" style="width: 100% height: auto"/>
+                <br>
+                <img src="/Graph-global.png" alt="Graphique global" style="width: 100% height: auto"/>
+            </p>
+        </div>
+            <HR>
+            <div class="content_section_text">
+          <p>
+                <a href="/Rapport1.pdf">Compte rendu d'activitées</a>
+          </p>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+    <div class="validator">
+    </div>
+      </div>
+    </div>
+  </body>
+</html>
+

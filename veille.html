@@ -1,0 +1,333 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Apache2 Debian Default Page: It works</title>
+    <style type="text/css" media="screen">
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #D8DBE2;
+
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 99px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-style: italic;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_red {
+    background-color: #CD214F;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+    <div class="main_page">
+      <div class="page_header floating_element">
+        <img src="/icons/openlogo-75.png" alt="Debian Logo" class="floating_element"/>
+        <span class="floating_element">
+          <a href="/index.html">Apache2 Debian Default Page</a>
+        </span>
+      </div>
+<!--      <div class="table_of_contents floating_element">
+        <div class="section_header section_header_grey">
+          TABLE OF CONTENTS
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#about">About</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#changes">Changes</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#scope">Scope</a>
+        </div>
+        <div class="table_of_contents_item floating_element">
+          <a href="#files">Config files</a>
+        </div>
+      </div>
+-->
+      <div class="content_section floating_element">
+
+
+        <div class="section_header section_header_red">
+          <div id="about"></div>
+          Veille Technologique
+        </div>
+        <div class="content_section_text">
+          <p>
+                Ma veille technologique c'est principalement tourné vers le logiciel libre et l'open sources
+          </p>
+
+
+
+
+        </div>
+        <div class="section_header">
+          <div id="changes"></div>
+                Les logiciels Libres
+        </div>
+        <div class="content_section_text">
+          <p>
+                « Logiciel libre » [free software] désigne des logiciels qui respectent la liberté des
+                utilisateurs. En gros, cela veut dire que les utilisateurs ont la liberté d'exécuter, copier,
+                distribuer, étudier, modifier et améliorer ces logiciels. Ainsi, « logiciel libre » fait
+                référence à la liberté, pas au prix a (pour comprendre ce concept, vous devez penser à
+                « liberté d'expression », pas à « entrée libre »). Pour bien montrer qu'il ne
+                s'agit pas de gratuité, nous utilisons quelquefois en anglais l'expression libre software, qui
+                emprunte au français ou à l'espagnol. (source : <a href="https://www.gnu.org/philosophy/free-sw.fr.html">
+                www.gnu.org</a>)
+
+          </p>
+          <p>
+                Le SILL (Socle Interlinisteriel des Logiciels Libres) regroupe un grand nombres de logiciels libres et
+                utilisé dans l'administration française à différent niveau <img src="/logiciel-libre.png" alt="source : https://www.april.org/le-logiciel-libre-comme-outil-de-defense-des-droits-des-utilisateurs-libday-2016" style="width: 100% height: auto"/>
+          </p>
+            <p>D'après le site gnu.org :  Un programme est un logiciel libre si vous, en tant qu'utilisateur de ce programme, avez les quatre libertés essentielles</p>
+
+          <ul>
+                        <li>
+                           la liberté de faire fonctionner le programme comme vous voulez, pour n'importe quel usage (liberté 0) ;
+                        </li>
+
+                        <li>
+                           la liberté d'étudier le fonctionnement du programme, et de le modifier pour qu'il effectue vos tâches
+                            informatiques comme vous le souhaitez (liberté 1) ; l'accès au code source est une condition nécessaire ;
+                        </li>
+
+                        <li>
+                           la liberté de redistribuer des copies, donc d'aider les autres (liberté 2) ;
+                        </li>
+
+                        <li>
+                           la liberté de distribuer aux autres des copies de vos versions modifiées (liberté 3) ;
+                            en faisant cela, vous donnez à toute la communauté une possibilité de profiter de vos
+                            changements ; l'accès au code source est une condition nécessaire.
+                        </li>
+
+          </ul>
+        </div>
+
+        <div class="section_header">
+            <div id="docroot"></div>
+                L'Open Source
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                À l'origine, l'expression « Open Source » faisait référence aux logiciels Open Source. Un logiciel
+                Open Source est un code conçu pour être accessible au public : n'importe qui peut voir, modifier et
+                distribuer le code à sa convenance.
+                Ce type de logiciel est développé de manière collaborative et décentralisée, par une communauté, et
+                repose sur l'examen par les pairs. Un logiciel Open Source est souvent moins cher, plus flexible et
+                profite d'une longévité supérieure par rapport à ses équivalents propriétaires, car il est développé par
+                des communautés et non par une entreprise ou un auteur.
+                L'Open Source est devenu un mouvement à part entière et une méthode de travail qui dépasse la simple
+                création de logiciels. Le mouvement Open Source s'appuie sur les valeurs et le modèle de production
+                décentralisée des logiciels Open Source pour trouver de nouvelles manières de résoudre les problèmes
+                auxquels font face des communautés et des secteurs d'activité. (source : <a href="https://www.redhat.com/fr/topics/open-source/what-is-open-source">
+                www.redhat.com</a>)
+            </p>
+        </div>
+
+        <div class="section_header">
+          <div id="bugs"></div>
+                Liens utiles
+        </div>
+        <div class="content_section_text">
+          <p>
+               <li>
+                    <a href="https://sill.code.gouv.fr">Site du SILL</a>
+                </li>
+                <li>
+                    <a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">En quoi l'open source perd
+                        de vue l'éthique du logiciel libre</a>
+                </li>
+               <li>
+                    <a href="https://fr.wikipedia.org/wiki/Logiciel_libre">Logiciel Libre article Wikipedia</a>
+               </li>
+              <li>
+                    <a href="https://www.fsf.org/about/what-is-free-software">What is free software</a>
+              </li>
+              <li>
+                    <a href="https://www.francenum.gouv.fr/guides-et-conseils/pilotage-de-lentreprise/logiciels-de-gestion-de-lentreprise/ou-trouver-des">
+                        Où trouver des logiciels libres ?</a>
+              </li>
+          </p>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <div class="validator">
+    </div>
+  </body>
+</html>
+
