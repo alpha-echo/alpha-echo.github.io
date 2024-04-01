@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 30 jan. 2024 à 18:33
--- Version du serveur : 5.7.44
--- Version de PHP : 7.4.33
+-- Généré le : lun. 01 avr. 2024 à 21:31
+-- Version du serveur : 8.2.0
+-- Version de PHP : 8.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `abonnement` (
   `idRevue` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idRevue` (`idRevue`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `abonnement`
@@ -116,7 +116,8 @@ INSERT INTO `abonnement` (`id`, `dateFinAbonnement`, `idRevue`) VALUES
 ('00022', '2024-03-25', '10003'),
 ('00023', '2024-01-31', '10002'),
 ('00024', '2024-02-09', '10002'),
-('00025', '2024-02-25', '10003');
+('00025', '2024-02-25', '10003'),
+('00029', '2024-06-01', '10014');
 
 --
 -- Déclencheurs `abonnement`
@@ -148,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
   `dateCommande` date DEFAULT NULL,
   `montant` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `commande`
@@ -178,7 +179,9 @@ INSERT INTO `commande` (`id`, `dateCommande`, `montant`) VALUES
 ('00024', '2023-03-13', 2),
 ('00025', '2024-01-25', 4),
 ('00026', '2024-01-26', 2),
-('00027', '2024-01-28', 3);
+('00027', '2024-01-28', 3),
+('00028', '2024-04-01', 50),
+('00029', '2024-04-01', 1);
 
 -- --------------------------------------------------------
 
@@ -189,13 +192,13 @@ INSERT INTO `commande` (`id`, `dateCommande`, `montant`) VALUES
 DROP TABLE IF EXISTS `commandedocument`;
 CREATE TABLE IF NOT EXISTS `commandedocument` (
   `id` varchar(5) NOT NULL,
-  `nbExemplaire` int(11) DEFAULT NULL,
+  `nbExemplaire` int DEFAULT NULL,
   `idLivreDvd` varchar(10) NOT NULL,
-  `idsuivi` int(4) NOT NULL,
+  `idsuivi` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idLivreDvd` (`idLivreDvd`),
   KEY `idsuivi` (`idsuivi`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `commandedocument`
@@ -220,7 +223,8 @@ INSERT INTO `commandedocument` (`id`, `nbExemplaire`, `idLivreDvd`, `idsuivi`) V
 ('00019', 2, '00019', 1),
 ('00020', 1, '20002', 1),
 ('00026', 1, '00003', 3),
-('00027', 2, '20002', 3);
+('00027', 2, '20002', 3),
+('00028', 5, '00027', 3);
 
 --
 -- Déclencheurs `commandedocument`
@@ -282,7 +286,7 @@ CREATE TABLE IF NOT EXISTS `document` (
   KEY `idRayon` (`idRayon`),
   KEY `idPublic` (`idPublic`),
   KEY `idGenre` (`idGenre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `document`
@@ -315,6 +319,7 @@ INSERT INTO `document` (`id`, `titre`, `image`, `idRayon`, `idPublic`, `idGenre`
 ('00024', 'Pavillon noir', '', 'BD001', '00002', '10001'),
 ('00025', 'L\'archipel du danger', '', 'BD001', '00002', '10001'),
 ('00026', 'La planète des singes', '', 'LV002', '00003', '10002'),
+('00027', 'L\'Archipel du Goulag', '', 'DV001', '00002', '10004'),
 ('10001', 'Arts Magazine', '', 'PR002', '00002', '10016'),
 ('10002', 'Alternatives Economiques', '', 'PR002', '00002', '10015'),
 ('10003', 'Challenges', '', 'PR002', '00002', '10015'),
@@ -327,6 +332,7 @@ INSERT INTO `document` (`id`, `titre`, `image`, `idRayon`, `idPublic`, `idGenre`
 ('10010', 'L\'Equipe Magazine', '', 'PR002', '00002', '10017'),
 ('10011', 'Geo', '', 'BL001', '00003', '10016'),
 ('10013', 'heyyy toi la', '', 'BL001', '00004', '10001'),
+('10014', 'Picsou Magazine', '', 'PR002', '00001', '10001'),
 ('20001', 'Star Wars 5 L\'empire contre attaque', '', 'DF001', '00003', '10002'),
 ('20002', 'Le seigneur des anneaux : la communauté de l\'anneau', '', 'DF001', '00003', '10019'),
 ('20003', 'Jurassic Park', '', 'DF001', '00003', '10002'),
@@ -343,9 +349,9 @@ CREATE TABLE IF NOT EXISTS `dvd` (
   `id` varchar(10) NOT NULL,
   `synopsis` text,
   `realisateur` varchar(20) DEFAULT NULL,
-  `duree` int(6) DEFAULT NULL,
+  `duree` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `dvd`
@@ -379,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `etat` (
   `id` char(5) NOT NULL,
   `libelle` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `etat`
@@ -400,13 +406,13 @@ INSERT INTO `etat` (`id`, `libelle`) VALUES
 DROP TABLE IF EXISTS `exemplaire`;
 CREATE TABLE IF NOT EXISTS `exemplaire` (
   `id` varchar(10) NOT NULL,
-  `numero` int(11) NOT NULL,
+  `numero` int NOT NULL,
   `dateAchat` date DEFAULT NULL,
   `photo` varchar(500) NOT NULL,
   `idEtat` char(5) NOT NULL,
   PRIMARY KEY (`id`,`numero`),
   KEY `idEtat` (`idEtat`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `exemplaire`
@@ -437,6 +443,11 @@ INSERT INTO `exemplaire` (`id`, `numero`, `dateAchat`, `photo`, `idEtat`) VALUES
 ('00024', 7, '2024-01-21', '', '00001'),
 ('00024', 8, '2024-01-21', '', '00001'),
 ('00024', 9, '2024-01-21', '', '00001'),
+('00027', 1, '2024-04-01', '', '00002'),
+('00027', 2, '2024-04-01', '', '00001'),
+('00027', 3, '2024-04-01', '', '00001'),
+('00027', 4, '2024-04-01', '', '00001'),
+('00027', 5, '2024-04-01', '', '00001'),
 ('10001', 3, '2024-01-28', '', '00002'),
 ('10003', 23, '2024-01-25', '', '00001'),
 ('10007', 3237, '2021-11-23', '', '00001'),
@@ -453,6 +464,7 @@ INSERT INTO `exemplaire` (`id`, `numero`, `dateAchat`, `photo`, `idEtat`) VALUES
 ('10011', 512, '2021-10-06', '', '00001'),
 ('10011', 513, '2021-11-01', '', '00001'),
 ('10011', 514, '2021-12-01', '', '00001'),
+('10014', 576, '2024-02-14', '', '00001'),
 ('20002', 2, '2024-01-22', '', '00002'),
 ('20002', 3, '2024-01-22', '', '00001'),
 ('20002', 4, '2024-01-28', '', '00001'),
@@ -469,7 +481,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
   `id` varchar(5) NOT NULL,
   `libelle` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `genre`
@@ -509,7 +521,7 @@ CREATE TABLE IF NOT EXISTS `livre` (
   `auteur` varchar(20) DEFAULT NULL,
   `collection` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `livre`
@@ -541,7 +553,8 @@ INSERT INTO `livre` (`id`, `ISBN`, `auteur`, `collection`) VALUES
 ('00023', '', 'Ayrolles - Masbou', 'De cape et de crocs'),
 ('00024', '', 'Ayrolles - Masbou', 'De cape et de crocs'),
 ('00025', '', 'Ayrolles - Masbou', 'De cape et de crocs'),
-('00026', '', 'Pierre Boulle', 'Julliard');
+('00026', '', 'Pierre Boulle', 'Julliard'),
+('00027', '9782020021180', 'Alexandre Soljenitsy', 'Points - Biographies');
 
 --
 -- Déclencheurs `livre`
@@ -564,7 +577,7 @@ DROP TABLE IF EXISTS `livres_dvd`;
 CREATE TABLE IF NOT EXISTS `livres_dvd` (
   `id` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `livres_dvd`
@@ -597,6 +610,7 @@ INSERT INTO `livres_dvd` (`id`) VALUES
 ('00024'),
 ('00025'),
 ('00026'),
+('00027'),
 ('20001'),
 ('20002'),
 ('20003'),
@@ -624,7 +638,7 @@ CREATE TABLE IF NOT EXISTS `public` (
   `id` varchar(5) NOT NULL,
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `public`
@@ -647,7 +661,7 @@ CREATE TABLE IF NOT EXISTS `rayon` (
   `id` char(5) NOT NULL,
   `libelle` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `rayon`
@@ -680,9 +694,9 @@ DROP TABLE IF EXISTS `revue`;
 CREATE TABLE IF NOT EXISTS `revue` (
   `id` varchar(10) NOT NULL,
   `periodicite` varchar(2) DEFAULT NULL,
-  `delaiMiseADispo` int(11) DEFAULT NULL,
+  `delaiMiseADispo` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `revue`
@@ -700,7 +714,8 @@ INSERT INTO `revue` (`id`, `periodicite`, `delaiMiseADispo`) VALUES
 ('10009', 'QT', 5),
 ('10010', 'HB', 12),
 ('10011', 'MS', 52),
-('10013', 'MS', 2);
+('10013', 'MS', 2),
+('10014', 'MS', 2);
 
 --
 -- Déclencheurs `revue`
@@ -724,7 +739,7 @@ CREATE TABLE IF NOT EXISTS `service` (
   `id` varchar(5) NOT NULL,
   `libelle` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `service`
@@ -744,10 +759,10 @@ INSERT INTO `service` (`id`, `libelle`) VALUES
 
 DROP TABLE IF EXISTS `suivi`;
 CREATE TABLE IF NOT EXISTS `suivi` (
-  `id` int(4) NOT NULL,
+  `id` int NOT NULL,
   `etat` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `suivi`
@@ -775,7 +790,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `idservice` varchar(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idservice` (`idservice`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
